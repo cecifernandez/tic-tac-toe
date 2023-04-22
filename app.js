@@ -26,6 +26,12 @@ const Gameboard = (() => {
 
 const displayController = (() => {
   const squareEl = document.querySelectorAll(".square");
+  const setPvp = document.querySelector("#select-pvp");
+  const playersOverlay = document.querySelector("#players-name");
+
+  setPvp.addEventListener("click", () => {
+    playersOverlay.style.display = "flex";
+  });
 
   squareEl.forEach((square) => {
     square.addEventListener("click", (e) => {

@@ -1,7 +1,125 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Itim', cursive;
+    font-family: 'Days One', sans-serif;
+    /* background-color: #509A96; */
+}
+
+body {
+    background-image: url("img/bg.jpg");
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.player-choice {
+    display: flex;
+    gap: 30%;
+    justify-content: center;
+    font-size: 13px;
+    text-align: center;
+}
+
+.pvp,
+.pvsai {
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(212, 218, 212, 0.1);
+    backdrop-filter: blur(5px);
+    transition: .2s;
+}
+
+.pvp:hover,
+.pvsai:hover {
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+}
+
+.pvp-img,
+.ai-img {
+    margin-top: 10%;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.name-player-container {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.start-btn-container {
+    position: absolute;
+    margin-left: -50px;
+    left: 50%;
+    width: 100px;
+    bottom: 20%;
+}
+
+.start-btn {
+    padding: 20%;
+    border-radius: 10%;
+    background-color: #ffd23f;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.start-btn:hover {
+    transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.p1-mark,
+.p2-mark {
+    font-size: 100px;
+    border: 1px solid white;
+    padding: 0.1rem 2rem 0.1rem 2rem;
+    border-radius: 20px;
+    background-color: #0000009d;
+}
+
+.p1-mark {
+    color: #6BB174;
+
+}
+
+.p2-mark {
+    color: #EBBAB9;
+}
+
+.p1-text,
+.p2-text {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #ff8fab;
+}
+
+.player1-name,
+.player2-name {
+    margin-top: 15%;
+}
+
+.playerX {
+    color: #E7C8DD;
+}
+
+.playerO {
+    color: #BBE5ED;
 }
 
 .container {
@@ -10,11 +128,13 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 33% 33% 33%;
-    max-width: 300px;
+    max-width: 400px;
+    max-height: 500px;
+    gap: 5px;
 }
 
 .square {
-    border: 1px solid rgb(26, 26, 26);
+    border: 1px solid #DBAFC1;
     min-width: 100px;
     min-height: 100px;
     display: flex;
@@ -22,4 +142,28 @@
     align-items: center;
     font-size: 50px;
     cursor: pointer;
+}
+
+.square1,
+.square2,
+.square3 {
+    border-top: white;
+}
+
+.square1,
+.square4,
+.square7 {
+    border-left: white;
+}
+
+.square7,
+.square8,
+.square9 {
+    border-bottom: white;
+}
+
+.square3,
+.square6,
+.square9 {
+    border-right: white;
 }
