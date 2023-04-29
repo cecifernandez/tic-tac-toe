@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <div class="start-container">
+      <div class="start-container" id="home">
         <h1 class="title">Tic-Tac-Toe</h1>
         <div class="player-choice">
           <div class="pvp" id="select-pvp">
@@ -29,23 +29,7 @@
         </div>
       </div>
 
-      <div class="name-player-container" style="display: none" id="players-name">
-        <span class="player1-name">
-          <span class="p1-mark">X</span>
-          <h2 class="p1-text">Player One</h2>
-          <input type="text" placeholder="What's your name?" />
-        </span>
-        <span class="player2-name">
-          <span class="p2-mark">O</span>
-          <h2 class="p2-text">Player Two</h2>
-          <input type="text" placeholder="What's your name?" />
-        </span>
-        <div class="start-btn-container">
-          <button class="start-btn">START</button>
-        </div>
-      </div>
-
-      <div class="container" style="display: none">
+      <div class="container" style="display: none" id="game">
         <div class="square square1" data-index="0"></div>
         <div class="square square2" data-index="1"></div>
         <div class="square square3" data-index="2"></div>
@@ -55,6 +39,13 @@
         <div class="square square7" data-index="6"></div>
         <div class="square square8" data-index="7"></div>
         <div class="square square9" data-index="8"></div>
+      </div>
+
+      <div class="winner-container" style="display: none" id="end-page">
+        <span><img src="img/tttt.png" alt="" class="win-img" /></span>
+        <h1 class="win-text" id="winner"></h1>
+        <button class="play-btn" id="play-again">Play again</button>
+        <button class="home-btn" id="home-btn">Home</button>
       </div>
     </main>
     <script src="app.js"></script>

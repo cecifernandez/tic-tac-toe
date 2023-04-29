@@ -2,7 +2,9 @@ const Gameboard = (() => {
   const board = ["", "", "", "", "", "", "", "", ""];
 
   const resetBoard = () => {
-    board = ["", "", "", "", "", "", "", "", ""];
+    for (let i = 0; i < board.length; i++) {
+      board[i] = "";
+    }
   };
 
   const setSign = (index, sign) => {
@@ -24,13 +26,40 @@ const Gameboard = (() => {
   return { resetBoard, setSign, getSquare };
 })();
 
+const Player = (sign) => {
+  const getSign = () => sign;
+
+  return { getSign };
+};
+
 const displayController = (() => {
   const squareEl = document.querySelectorAll(".square");
   const setPvp = document.querySelector("#select-pvp");
-  const playersOverlay = document.querySelector("#players-name");
+  const gameContainer = document.querySelector("#game");
+  const homePage = document.querySelector("#home");
+  const homeBtn = document.querySelector("#home-btn");
+  const playAgainBtn = document.querySelector("#play-again");
+  const endGame = document.querySelector("#end-page");
+
+  homeBtn.addEventListener("click", () => {
+    homePage.style.display = "block";
+    gameContainer.style.display = "none";
+    endGame.style.display = "none";
+  });
+
+  playAgainBtn.addEventListener("click", () => {
+    endGame.style.display = "none";
+    Gameboard.resetBoard();
+    Game.reset();
+    updateBoard();
+  });
 
   setPvp.addEventListener("click", () => {
-    playersOverlay.style.display = "flex";
+    homePage.style.display = "none";
+    gameContainer.style.display = "grid";
+    Gameboard.resetBoard();
+    Game.reset();
+    updateBoard();
   });
 
   squareEl.forEach((square) => {
@@ -53,16 +82,12 @@ const displayController = (() => {
   return { updateBoard };
 })();
 
-const Player = (name, sign) => {
-  const getName = () => name;
-  const getSign = () => sign;
-
-  return { getName, getSign };
-};
-
 const Game = (() => {
-  const playerO = Player("Player O", "O");
-  const playerX = Player("Player X", "X");
+  const endGame = document.querySelector("#end-page");
+  const result = document.querySelector("#winner");
+
+  const playerO = Player("O");
+  const playerX = Player("X");
   let round = 1;
   let gameOver = false;
 
@@ -91,10 +116,20 @@ const Game = (() => {
     Gameboard.setSign(sqrIndex, currentPlayer());
     if (playerWins() === true) {
       gameOver == true;
+      window.setTimeout(() => {
+        endGame.style.display = "flex";
+        result.innerHTML = `Player ${currentPlayer()} wins!!`;
+      }, 100);
+
       return;
     }
     round++;
   };
 
-  return { playRound, playerO, playerX, currentPlayer, gameOver };
+  const reset = () => {
+    round = 1;
+    gameOver = false;
+  };
+
+  return { playRound, currentPlayer, gameOver, reset };
 })();
