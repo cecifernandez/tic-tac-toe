@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Days+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <main>
+      <div class="start-container" id="home">
+        <h1 class="title">Tic-Tac-Toe</h1>
+        <div class="player-choice">
+          <div class="pvp" id="select-pvp">
+            <span><img src="img/pvp.jpg" alt="" class="pvp-img" /></span>
+            <h2 class="pvp-text">Player vs. Player</h2>
+          </div>
+          <div class="pvsai">
+            <span><img src="img/ai2.jpg" alt="" class="ai-img" /></span>
+            <h2>Player vs. AI</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="display: none" id="game">
+        <div class="square square1" data-index="0"></div>
+        <div class="square square2" data-index="1"></div>
+        <div class="square square3" data-index="2"></div>
+        <div class="square square4" data-index="3"></div>
+        <div class="square square5" data-index="4"></div>
+        <div class="square square6" data-index="5"></div>
+        <div class="square square7" data-index="6"></div>
+        <div class="square square8" data-index="7"></div>
+        <div class="square square9" data-index="8"></div>
+      </div>
+
+      <div class="winner-container" style="display: none" id="end-page">
+        <span><img src="img/tttt.png" alt="" class="win-img" /></span>
+        <h1 class="win-text" id="winner"></h1>
+        <button class="play-btn" id="play-again">Play again</button>
+        <button class="home-btn" id="home-btn">Home</button>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Days One', sans-serif;
+    /* background-color: #509A96; */
+}
+
+body {
+    background-image: url("img/bg.jpg");
+
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.player-choice {
+    display: flex;
+    gap: 30%;
+    justify-content: center;
+    font-size: 13px;
+    text-align: center;
+}
+
+.pvp,
+.pvsai {
+    border-radius: 15px;
+    padding: 10px;
+    background: rgba(212, 218, 212, 0.1);
+    backdrop-filter: blur(5px);
+    transition: .2s;
+}
+
+.pvp:hover,
+.pvsai:hover {
+    transform: scale(1.1, 1.1);
+    cursor: pointer;
+}
+
+.pvp-img,
+.ai-img {
+    margin-top: 10%;
+    width: 300px;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+.p1-mark,
+.p2-mark {
+    font-size: 100px;
+    border: 1px solid white;
+    padding: 0.1rem 2rem 0.1rem 2rem;
+    border-radius: 20px;
+    background-color: #0000009d;
+}
+
+.playerX {
+    color: #E7C8DD;
+}
+
+.playerO {
+    color: #BBE5ED;
+}
+
+.container {
+    margin: auto;
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 400px;
+    max-height: 500px;
+    gap: 3px;
+    backdrop-filter: blur(5px);
+}
+
+.square {
+    border: 4px solid #f07b7b;
+    border-radius: 15px;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.winner-container {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.play-btn {
+    position: absolute;
+    left: 50%;
+    width: 100px;
+    bottom: 20%;
+    height: 5%;
+
+}
+
+.home-btn {
+    position: absolute;
+    left: 40%;
+    width: 100px;
+    height: 5%;
+    bottom: 20%;
+}
+
+.win-img{
+    position: absolute;
+    right: 44%;
+    width: 250px;
+    bottom: 40%;
+}
+
+.win-text{
+    position: absolute;
+    left: 41%;
+    bottom: 35%;
+}
+
+/* .square1,
+.square2,
+.square3 {
+    border-top: white;
+}
+
+.square1,
+.square4,
+.square7 {
+    border-left: white;
+}
+
+.square7,
+.square8,
+.square9 {
+    border-bottom: white;
+}
+
+.square3,
+.square6,
+.square9 {
+    border-right: white;
+} */
